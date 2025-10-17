@@ -34,7 +34,7 @@ header img {
     margin-top: 0.5rem;
 }
 .hero .hero-text h1 {
-    font-size: clamp(1.5rem, 5vw, 2.1rem);
+    font-size: clamp(1.5rem, 5vw, 2.8rem);
     margin-bottom: 1.1rem;
 }
 .hero .hero-text p {
