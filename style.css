@@ -1,105 +1,108 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 :root {
     --mon-violet1: hsl(257, 40%, 49%);
     --mon-violet2: hsl(300, 69%, 71%);
 }
+/* ont-family: "Open Sans", sans-serif; */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
 }
 body {
-    font-family: 'Poppins';
-    color: #fff;
-    background: hsl(257, 40%, 49%) url('./images/bg-desktop.svg') center center/cover;
+    width: 100%;
+    min-height: 100vh;
+    background: url(/images/bg-desktop.svg) center center / cover no-repeat;
+    background-color: var(--mon-violet1);
+    transition: background-image .4s ease;
 }
-header img {
-    margin: 30px;
-    height: 50px;
-}
-.hero {
+.container {
+    height: 90%;
+    max-width: 1320px;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
     gap: 2rem;
     padding: 0 2rem;
 }
-.hero .hero-image img {
+.container header img {
+    width: 190px;
+}
+.hero {
     width: 100%;
     height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
 }
-.hero .hero-text {
+.hero img {
+    width: 100%;
+    min-width: 300px;
+    height: auto;
+}
+.hero-text {
     flex: 1;
-    margin-top: 0.5rem;
 }
-.hero .hero-text h1 {
-    font-size: clamp(1.5rem, 5vw, 2.8rem);
-    margin-bottom: 1.1rem;
+.hero-text h1 {
+    color: white;
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 0.7rem;
 }
-.hero .hero-text p {
-    font-size: clamp(0.88rem, 1.12vw, 1.27rem);
-    margin-bottom: 1.1rem;
+.hero-text p {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: clamp(1.04rem, 4vw, 1.13rem);
+    line-height: 1.4;
+    margin-bottom: 0.7rem;
 }
-.btn {
-    border: none;
+.hero-text .btn {
     background: white;
     color: var(--mon-violet1);
-    padding: 0.75rem 2.5rem;
-    border-radius: 20px;
-    font-size: 1rem;
-    box-shadow: 1px 2px 8px rgb(66, 0, 66);
+    font-weight: 600;
+    font-family: 'Poppins' sans-serif;
+    padding: .8rem 2.3rem;
+    border: none;
+    border-radius: 24px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all .3s ease;
+    box-shadow: 1px 4px 10px rgb(0, 0, 0);
 }
-.btn:hover {
+.hero-text .btn:hover {
     background: var(--mon-violet2);
     color: white;
 }
+.hero:has(.hero-text:nth-child(2):where(:last-child)) .hero-text {
+  align-items: center; /* 👉 centré quand passe en dessous */
+  text-align: center;
+}
 .logos {
-  display: flex;
-  justify-content: end;
-  gap: 16px;
-  padding: 20px;
+    text-align: right;
+    margin: 2rem 0;
 }
-
-.logos i {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  border: 2px solid white;
-  border-radius: 50%; /* Crée le cercle */
-  color: white; /* Couleur de l'icône */
-  font-size: 18px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.logos a {
+    color: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0.2rem;
+    width: 40px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .3s ease;
 }
-.logos i:hover {
-    color: rgb(217, 8, 217);
-    border-color: rgb(217, 8, 217);
+.logos a:hover {
+    color: var(--mon-violet2);
+    border: 2px solid var(--mon-violet2);
 }
-@media (max-width: 768px) {
-    body {
-    font-family: 'Poppins';
-    color: #fff;
-    background: hsl(257, 40%, 49%) url('./images/bg-mobile.svg') center center/cover;
+.attribution a {
+    font-size: 1rem;
+    color: white;
 }
-    .hero {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .logos {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  padding: 20px;
-}
-}
-
